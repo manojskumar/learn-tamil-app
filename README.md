@@ -1,4 +1,3 @@
-
 # Tamil Learning Adventure - M&Ms  Tamil கற்கும் பயணம்
 
 An interactive web application designed to help secondary school children learn basic Tamil alphabets, words, sentences, and concepts in an engaging way. This app features lessons, drawing practice, and quizzes to reinforce learning.
@@ -15,18 +14,18 @@ An interactive web application designed to help secondary school children learn 
     *   Quizzes for each chapter and comprehensive final exams.
 *   **Dynamic Quiz Generation:** Quizzes are dynamically assembled with a mix of image-derived and general questions for variety.
 *   **Responsive Design:** Adapts to different screen sizes for a seamless experience on desktop and mobile.
-*   **Offline Capabilities:** Uses a Service Worker to cache assets for offline access after the first visit.
+*   **Offline Capabilities:** Uses a Service Worker to cache assets for offline access after the first visit. (Note: Full offline for all generated JS/CSS bundles requires a PWA plugin for Vite like `vite-plugin-pwa`).
 *   **User-Friendly Interface:** Clean, intuitive, and aesthetically pleasing design using TailwindCSS.
 
 ## 🚀 Technologies Used
 
 *   **React:** For building the user interface.
 *   **TypeScript:** For static typing and improved code quality.
-*   **TailwindCSS:** For styling the application.
-*   **ESM Modules (via esm.sh):** For serving React and React-DOM.
+*   **Vite:** For fast local development and optimized production builds.
+*   **TailwindCSS:** For styling the application (via CDN).
 *   **HTML5 & CSS3:** Core web technologies.
 *   **Service Worker:** For offline support.
-*   **(@google/genai - Intended/Future):** The application is structured to potentially integrate with the Google Gemini API for advanced features like AI-powered feedback, content generation, or conversational practice.
+*   **(@google/genai - Intended/Future):** The application is structured to potentially integrate with the Google Gemini API for advanced features.
 
 ## 📋 Prerequisites
 
@@ -41,10 +40,8 @@ An interactive web application designed to help secondary school children learn 
     ```
 
 2.  **Install dependencies:**
-    This project uses ESM modules directly in the browser and doesn't have a traditional `package.json` with `npm install` for dependencies like React. The necessary scripts are loaded via `importmap` in `index.html`. For local development, you typically serve the `index.html` file.
-    If you were to add development tools (like a bundler or dev server), you would then use:
     ```bash
-    # npm install
+    npm install
     # or
     # yarn install
     ```
@@ -54,131 +51,107 @@ An interactive web application designed to help secondary school children learn 
     *   Obtain an API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
     *   Create a `.env` file in the root of your project:
         ```env
-        API_KEY=YOUR_GEMINI_API_KEY
+        VITE_API_KEY=YOUR_GEMINI_API_KEY 
         ```
-    *   **Important:** Add `.env` to your `.gitignore` file to prevent committing your API key. The application is designed to load this key via `process.env.API_KEY`.
+        *(Note: Vite exposes env variables prefixed with `VITE_` to client-side code)*
+    *   **Important:** Add `.env` to your `.gitignore` file to prevent committing your API key. The application would access this via `import.meta.env.VITE_API_KEY`.
 
 ## 🏃‍♂️ Running Locally
 
-Since this project is set up to run directly in the browser using ES modules and an `importmap`, you can run it by serving the `index.html` file with a simple local HTTP server.
-
-1.  **Using a simple HTTP server (e.g., `http-server` via npx):**
-    If you have Node.js, you can use `npx`:
+1.  **Start the development server:**
     ```bash
-    npx http-server .
+    npm run dev
+    # or
+    # yarn dev
     ```
-    This will serve the current directory. Open your browser to the URL provided (usually `http://localhost:8080`).
-
-2.  **Using VS Code Live Server extension:**
-    If you use VS Code, the "Live Server" extension is a convenient way to serve the `index.html` file.
+    This will start the Vite development server, typically at `http://localhost:5173`. Open this URL in your browser. The server provides Hot Module Replacement (HMR) for a fast development experience.
 
 ## 📁 Project Structure
 
 ```
 .
-├── public/                     # Static assets that are publicly accessible
-│   ├── audio/                  # Audio files for alphabets and words
-│   │   ├── alphabets/
-│   │   └── words/
-│   ├── sw.js                   # Service Worker script for offline caching
-│   ├── index.html              # Main HTML entry point
-│   ├── index.tsx               # Main React/TypeScript entry point
-│   ├── metadata.json           # Application metadata
-│   ├── constants.ts            # Core data: alphabets, words, chapters, quiz questions
-│   ├── types.ts                # TypeScript type definitions
+├── public/                     # Static assets (copied to dist root)
+│   ├── audio/                  # Audio files
+│   ├── index.css               # Global CSS (if not bundled through JS)
+│   ├── metadata.json
+│   └── sw.js                   # Service Worker script
+├── src/                        # Application source code
+│   ├── components/             # React components
+│   │   └── icons/
 │   ├── App.tsx                 # Main application component
-│   └── components/             # Reusable UI components
-│       ├── icons/              # SVG icon components
-│       ├── Header.tsx
-│       ├── Navigation.tsx
-│       ├── ChapterSelection.tsx
-│       ├── ChapterLessonView.tsx
-│       ├── AlphabetCard.tsx
-│       ├── WordCard.tsx
-│       ├── DrawingCanvas.tsx     # For alphabet drawing practice
-│       ├── DrawingModal.tsx      # For quiz drawing input
-│       ├── QuizView.tsx
-│       └── QuizResults.tsx
-└── README.md                   # This file
+│   ├── constants.ts            # Core data
+│   ├── index.tsx               # React entry point
+│   └── types.ts                # TypeScript types
+├── .gitignore
+├── index.html                  # Main HTML template (Vite entry)
+├── package.json
+├── README.md
+├── tsconfig.json               # (Vite will use a default or you can add one)
+└── vite.config.ts              # Vite configuration
 ```
 
 ## 📚 Content Management
 
-All learning content (alphabets, words, sentences, paragraphs, stories, chapters, and quiz questions) is primarily managed in `constants.ts`.
-
-*   **Alphabets:** Defined in `UYIR_EZHUTHUKKAL`, `MEI_EZHUTHUKKAL`, `AAYUTHA_EZHUTHU`.
-*   **Words:** Grouped by categories (e.g., `COLORS_WORDS`, `FRUITS_WORDS`).
-*   **Sentences/Paragraphs/Stories:** Defined as `SentenceInfo`, `ParagraphInfo`, `StoryInfo`.
-*   **Chapters:** `CHAPTERS_DATA` array defines the structure and content of each chapter.
-*   **Quiz Questions:** `QUIZ_QUESTIONS_DATA` array holds all quiz questions. Ensure `chapterId` in questions matches a chapter `id` or an `exam.id` from the "Final Exams Hub" chapter.
-
-To add or modify content:
-1.  Open `constants.ts`.
-2.  Follow the existing data structures (`AlphabetInfo`, `WordInfo`, `ChapterInfo`, `QuizQuestion`, etc., defined in `types.ts`).
-3.  Add new data or modify existing entries.
-4.  Ensure audio files referenced in `audioSrc` exist in the `public/audio/` directory.
+All learning content (alphabets, words, sentences, etc.) is primarily managed in `src/constants.ts`. Audio files are in `public/audio/`.
+Paths to audio files in `constants.ts` (e.g., `audioSrc: 'audio/alphabets/a.mp3'`) are relative to the `public` directory, which Vite serves as the root.
 
 ## ⚙️ Building for Production
 
-For a production build, you would typically use a bundler like Webpack, Vite, or Parcel to:
-1.  Transpile TypeScript to JavaScript.
-2.  Bundle all JavaScript modules into optimized files.
-3.  Minify code.
-4.  Optimize assets.
-
-This project, as currently set up, does not have a build step configured with such tools. It relies on direct browser support for ES modules and `importmap`. For robust production deployment and wider browser compatibility, integrating a build tool is recommended.
+1.  **Run the build script:**
+    ```bash
+    npm run build
+    # or
+    # yarn build
+    ```
+    This command will use Vite to compile and bundle your application into the `dist/` directory. The `base` path in `vite.config.ts` is set to `/learn-tamil-app/` to ensure assets are loaded correctly when deployed to a subdirectory on GitHub Pages.
 
 ## 🌍 Deployment with GitHub Pages
 
-To deploy this app to GitHub Pages:
-
 1.  **Ensure your repository is on GitHub.**
-2.  **If you implement a build step:**
-    *   Configure your build tool to output files to a `docs` folder or the root of a `gh-pages` branch.
-    *   Run your build command (e.g., `npm run build`).
-    *   Commit the built files.
-3.  **If deploying without a build step (as is current setup):**
-    *   Your `index.html` and all related assets (`index.tsx`, `constants.ts`, `components/`, `public/audio/` etc.) need to be in the branch you're deploying from (e.g., `main`).
-    *   Ensure all paths in `index.html` (like `/index.tsx`, `/sw.js`) are relative and correct for GitHub Pages (often, paths starting with `/` work well if deploying to `username.github.io/repository-name/` and you set the base path correctly, or if deploying to a custom domain).
-4.  **Configure GitHub Pages:**
-    *   Go to your repository settings on GitHub.
-    *   Navigate to the "Pages" section.
-    *   Choose the branch to deploy from (e.g., `main` or `gh-pages`).
-    *   Choose the folder (e.g., `/root` or `/docs`).
-    *   Save. GitHub will build and deploy your site. It might take a few minutes.
-    *   Your site will be available at `https://<username>.github.io/<repository-name>/`.
-
-**Important for GitHub Pages:**
-*   **Base Path:** If your site is deployed to a subpath (e.g., `/<repository-name>/`), you might need to adjust asset paths or use a `<base href="/<repository-name>/" />` tag in your `index.html`'s `<head>`. The current setup uses root-relative paths like `/index.tsx` which should work if the deployment is at the root of a domain or if GitHub Pages handles it correctly.
-*   **Service Worker Path:** The path `navigator.serviceWorker.register('/sw.js')` assumes `sw.js` is at the root of the deployed site. Adjust if necessary.
+2.  **Build your project:** Run `npm run build`. This creates the `dist/` folder.
+3.  **Deploy the `dist/` folder:**
+    *   **Option A (Manual):**
+        1.  Commit the contents of the `dist/` folder to your `gh-pages` branch (or `main` branch if deploying from there). You might need to force push if rewriting history or use a tool like `gh-pages` npm package.
+    *   **Option B (Using `gh-pages` package - Recommended for simplicity):**
+        1.  Install `gh-pages`: `npm install gh-pages --save-dev`
+        2.  Add a deploy script to your `package.json`:
+            ```json
+            "scripts": {
+              // ... other scripts
+              "deploy": "vite build && gh-pages -d dist"
+            }
+            ```
+        3.  Run `npm run deploy`. This will build the project and push the `dist` folder contents to the `gh-pages` branch.
+    *   **Option C (GitHub Actions):** Set up a GitHub Action to automatically build and deploy on pushes to your main branch.
+4.  **Configure GitHub Pages settings:**
+    *   Go to your repository settings on GitHub -> Pages.
+    *   Set the source to deploy from the `gh-pages` branch (and `/ (root)` folder).
+    *   Your site will be available at `https://<username>.github.io/learn-tamil-app/`. The `base: '/learn-tamil-app/'` in `vite.config.ts` ensures all assets are loaded correctly from this subpath.
 
 ## 🌐 Offline Capabilities
 
-The application includes a Service Worker (`sw.js`) that provides basic offline capabilities. On the first visit (when online), critical assets (HTML, JS, CSS, some audio files) are cached. Subsequent visits, even if offline, can then serve these assets from the cache, allowing the app to load.
+The application includes a Service Worker (`public/sw.js`) for basic offline caching.
+*   The `sw.js` provided caches known static assets from the `public` folder and the main `index.html` and `index.css`.
+*   **Important:** It does **not** automatically cache the JavaScript and CSS files generated by Vite (which have hashed filenames, e.g., `assets/index-a1b2c3d4.js`). For a robust Progressive Web App (PWA) experience where these generated assets are also cached, consider using a Vite PWA plugin like `vite-plugin-pwa`. This plugin can auto-generate a service worker that includes all necessary assets.
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to contribute:
+Contributions are welcome!
 1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+2.  Create a new branch.
 3.  Make your changes.
-4.  Commit your changes (`git commit -m 'Add some feature'`).
-5.  Push to the branch (`git push origin feature/your-feature-name`).
-6.  Open a Pull Request.
-
-Please ensure your code follows the existing style and that any new features are well-documented.
+4.  Commit and push your changes.
+5.  Open a Pull Request.
 
 ## 📜 License
 
-This project is open-source. Please refer to the `LICENSE` file if one is added, or assume a standard permissive license like MIT unless otherwise specified.
+This project is open-source. (Consider adding a LICENSE file, e.g., MIT).
 
 ## 🙏 Acknowledgements
 
 *   **M&Ms:** For the concept and inspiration.
 *   **Google Gemini AI:** For assistance in development and guidance.
-*   The creators of React, TypeScript, and TailwindCSS.
-*   Providers of Tamil learning resources.
-
+*   The creators of React, TypeScript, Vite, and TailwindCSS.
 ---
 
 Happy Tamil Learning! மகிழ்ச்சியான தமிழ் கற்றல்! ✨
