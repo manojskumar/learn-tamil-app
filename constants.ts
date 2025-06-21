@@ -2,39 +2,39 @@
 import { AlphabetInfo, WordInfo, ChapterInfo, QuizQuestion, QuestionType, SentenceInfo, ParagraphInfo, StoryInfo, MCQOption, ReviewSectionInfo, ExamInfo } from './types';
 
 export const UYIR_EZHUTHUKKAL: AlphabetInfo[] = [
-  { tamil: 'அ', transliteration: 'a', type: 'vowel', soundExample: 'as in "america"', audioSrc: '/audio/alphabets/a.mp3' },
-  { tamil: 'ஆ', transliteration: 'aa', type: 'vowel', soundExample: 'as in "father"', audioSrc: '/audio/alphabets/aa.mp3' },
-  { tamil: 'இ', transliteration: 'i', type: 'vowel', soundExample: 'as in "india"', audioSrc: '/audio/alphabets/i.mp3' },
-  { tamil: 'ஈ', transliteration: 'ee', type: 'vowel', soundExample: 'as in "bee"', audioSrc: '/audio/alphabets/ii.mp3' },
-  { tamil: 'உ', transliteration: 'u', type: 'vowel', soundExample: 'as in "put"', audioSrc: '/audio/alphabets/u.mp3' },
-  { tamil: 'ஊ', transliteration: 'oo', type: 'vowel', soundExample: 'as in "moon"', audioSrc: '/audio/alphabets/uu.mp3' },
-  { tamil: 'எ', transliteration: 'e', type: 'vowel', soundExample: 'as in "get"', audioSrc: '/audio/alphabets/e_short.mp3' },
-  { tamil: 'ஏ', transliteration: 'ae', type: 'vowel', soundExample: 'as in "ate"', audioSrc: '/audio/alphabets/e_long.mp3' },
-  { tamil: 'ஐ', transliteration: 'ai', type: 'vowel', soundExample: 'as in "ice"', audioSrc: '/audio/alphabets/ai.mp3' },
-  { tamil: 'ஒ', transliteration: 'o', type: 'vowel', soundExample: 'as in "go" (short)', audioSrc: '/audio/alphabets/o_short.mp3' },
-  { tamil: 'ஓ', transliteration: 'oa', type: 'vowel', soundExample: 'as in "goat"', audioSrc: '/audio/alphabets/o_long.mp3' },
-  { tamil: 'ஔ', transliteration: 'au', type: 'vowel', soundExample: 'as in "ouch"', audioSrc: '/audio/alphabets/au.mp3' },
+  { tamil: 'அ', transliteration: 'a', type: 'vowel', soundExample: 'as in "america"', audioSrc: 'audio/alphabets/a.mp3' },
+  { tamil: 'ஆ', transliteration: 'aa', type: 'vowel', soundExample: 'as in "father"', audioSrc: 'audio/alphabets/aa.mp3' },
+  { tamil: 'இ', transliteration: 'i', type: 'vowel', soundExample: 'as in "india"', audioSrc: 'audio/alphabets/i.mp3' },
+  { tamil: 'ஈ', transliteration: 'ee', type: 'vowel', soundExample: 'as in "bee"', audioSrc: 'audio/alphabets/ii.mp3' },
+  { tamil: 'உ', transliteration: 'u', type: 'vowel', soundExample: 'as in "put"', audioSrc: 'audio/alphabets/u.mp3' },
+  { tamil: 'ஊ', transliteration: 'oo', type: 'vowel', soundExample: 'as in "moon"', audioSrc: 'audio/alphabets/uu.mp3' },
+  { tamil: 'எ', transliteration: 'e', type: 'vowel', soundExample: 'as in "get"', audioSrc: 'audio/alphabets/e_short.mp3' },
+  { tamil: 'ஏ', transliteration: 'ae', type: 'vowel', soundExample: 'as in "ate"', audioSrc: 'audio/alphabets/e_long.mp3' },
+  { tamil: 'ஐ', transliteration: 'ai', type: 'vowel', soundExample: 'as in "ice"', audioSrc: 'audio/alphabets/ai.mp3' },
+  { tamil: 'ஒ', transliteration: 'o', type: 'vowel', soundExample: 'as in "go" (short)', audioSrc: 'audio/alphabets/o_short.mp3' },
+  { tamil: 'ஓ', transliteration: 'oa', type: 'vowel', soundExample: 'as in "goat"', audioSrc: 'audio/alphabets/o_long.mp3' },
+  { tamil: 'ஔ', transliteration: 'au', type: 'vowel', soundExample: 'as in "ouch"', audioSrc: 'audio/alphabets/au.mp3' },
 ];
 
 export const MEI_EZHUTHUKKAL: AlphabetInfo[] = [
-  { tamil: 'க்', transliteration: 'ik', type: 'consonant', audioSrc: '/audio/alphabets/ik.mp3' },
-  { tamil: 'ங்', transliteration: 'ing', type: 'consonant', audioSrc: '/audio/alphabets/ing_soft.mp3' },
-  { tamil: 'ச்', transliteration: 'ich', type: 'consonant', audioSrc: '/audio/alphabets/ich.mp3' },
-  { tamil: 'ஞ்', transliteration: 'inj', type: 'consonant', audioSrc: '/audio/alphabets/inj.mp3' },
-  { tamil: 'ட்', transliteration: 'it', type: 'consonant', audioSrc: '/audio/alphabets/it_retroflex.mp3' },
-  { tamil: 'ண்', transliteration: 'in (retroflex)', type: 'consonant', audioSrc: '/audio/alphabets/in_retroflex.mp3' },
-  { tamil: 'த்', transliteration: 'ith', type: 'consonant', audioSrc: '/audio/alphabets/ith_dental.mp3' },
-  { tamil: 'ந்', transliteration: 'indh', type: 'consonant', audioSrc: '/audio/alphabets/indh_dental.mp3' },
-  { tamil: 'ப்', transliteration: 'ip', type: 'consonant', audioSrc: '/audio/alphabets/ip.mp3' },
-  { tamil: 'ம்', transliteration: 'im', type: 'consonant', audioSrc: '/audio/alphabets/im.mp3' },
-  { tamil: 'ய்', transliteration: 'iy', type: 'consonant', audioSrc: '/audio/alphabets/iy.mp3' },
-  { tamil: 'ர்', transliteration: 'ir', type: 'consonant', audioSrc: '/audio/alphabets/ir_trill.mp3' },
-  { tamil: 'ல்', transliteration: 'il', type: 'consonant', audioSrc: '/audio/alphabets/il_dental.mp3' },
-  { tamil: 'வ்', transliteration: 'iv', type: 'consonant', audioSrc: '/audio/alphabets/iv.mp3' },
-  { tamil: 'ழ்', transliteration: 'izh', type: 'consonant', audioSrc: '/audio/alphabets/izh.mp3' },
-  { tamil: 'ள்', transliteration: 'il (retroflex)', type: 'consonant', audioSrc: '/audio/alphabets/il_retroflex.mp3' },
-  { tamil: 'ற்', transliteration: 'itr', type: 'consonant', audioSrc: '/audio/alphabets/itr_alveolar.mp3' },
-  { tamil: 'ன்', transliteration: 'in (alveolar)', type: 'consonant', audioSrc: '/audio/alphabets/in_alveolar.mp3' },
+  { tamil: 'க்', transliteration: 'ik', type: 'consonant', audioSrc: 'audio/alphabets/ik.mp3' },
+  { tamil: 'ங்', transliteration: 'ing', type: 'consonant', audioSrc: 'audio/alphabets/ing_soft.mp3' },
+  { tamil: 'ச்', transliteration: 'ich', type: 'consonant', audioSrc: 'audio/alphabets/ich.mp3' },
+  { tamil: 'ஞ்', transliteration: 'inj', type: 'consonant', audioSrc: 'audio/alphabets/inj.mp3' },
+  { tamil: 'ட்', transliteration: 'it', type: 'consonant', audioSrc: 'audio/alphabets/it_retroflex.mp3' },
+  { tamil: 'ண்', transliteration: 'in (retroflex)', type: 'consonant', audioSrc: 'audio/alphabets/in_retroflex.mp3' },
+  { tamil: 'த்', transliteration: 'ith', type: 'consonant', audioSrc: 'audio/alphabets/ith_dental.mp3' },
+  { tamil: 'ந்', transliteration: 'indh', type: 'consonant', audioSrc: 'audio/alphabets/indh_dental.mp3' },
+  { tamil: 'ப்', transliteration: 'ip', type: 'consonant', audioSrc: 'audio/alphabets/ip.mp3' },
+  { tamil: 'ம்', transliteration: 'im', type: 'consonant', audioSrc: 'audio/alphabets/im.mp3' },
+  { tamil: 'ய்', transliteration: 'iy', type: 'consonant', audioSrc: 'audio/alphabets/iy.mp3' },
+  { tamil: 'ர்', transliteration: 'ir', type: 'consonant', audioSrc: 'audio/alphabets/ir_trill.mp3' },
+  { tamil: 'ல்', transliteration: 'il', type: 'consonant', audioSrc: 'audio/alphabets/il_dental.mp3' },
+  { tamil: 'வ்', transliteration: 'iv', type: 'consonant', audioSrc: 'audio/alphabets/iv.mp3' },
+  { tamil: 'ழ்', transliteration: 'izh', type: 'consonant', audioSrc: 'audio/alphabets/izh.mp3' },
+  { tamil: 'ள்', transliteration: 'il (retroflex)', type: 'consonant', audioSrc: 'audio/alphabets/il_retroflex.mp3' },
+  { tamil: 'ற்', transliteration: 'itr', type: 'consonant', audioSrc: 'audio/alphabets/itr_alveolar.mp3' },
+  { tamil: 'ன்', transliteration: 'in (alveolar)', type: 'consonant', audioSrc: 'audio/alphabets/in_alveolar.mp3' },
 ];
 
 export const AAYUTHA_EZHUTHU: AlphabetInfo = {
@@ -42,7 +42,7 @@ export const AAYUTHA_EZHUTHU: AlphabetInfo = {
   transliteration: 'akh',
   type: 'aayutham',
   soundExample: 'a special character',
-  audioSrc: '/audio/alphabets/akh.mp3'
+  audioSrc: 'audio/alphabets/akh.mp3'
 };
 
 export const ALL_ALPHABETS = [...UYIR_EZHUTHUKKAL, ...MEI_EZHUTHUKKAL, AAYUTHA_EZHUTHU];
@@ -75,105 +75,105 @@ const ALPHABET_CONCEPTS: ParagraphInfo[] = [
 ];
 
 export const COLORS_WORDS: WordInfo[] = [
-  { tamil: 'சிவப்பு', transliteration: 'sivappu', meaning: 'Red', category: 'simple', audioSrc: '/audio/words/sivappu.mp3' },
-  { tamil: 'பச்சை', transliteration: 'pachchai', meaning: 'Green', category: 'simple', audioSrc: '/audio/words/pachchai.mp3' },
-  { tamil: 'மஞ்சள்', transliteration: 'manjal', meaning: 'Yellow', category: 'simple', audioSrc: '/audio/words/manjal.mp3' },
-  { tamil: 'கருப்பு', transliteration: 'karuppu', meaning: 'Black', category: 'simple', audioSrc: '/audio/words/karuppu.mp3' },
-  { tamil: 'வெள்ளை', transliteration: 'vellai', meaning: 'White', category: 'simple', audioSrc: '/audio/words/vellai.mp3' },
-  { tamil: 'நீலம்', transliteration: 'neelam', meaning: 'Blue', category: 'simple', audioSrc: '/audio/words/neelam.mp3' },
+  { tamil: 'சிவப்பு', transliteration: 'sivappu', meaning: 'Red', category: 'simple', audioSrc: 'audio/words/sivappu.mp3' },
+  { tamil: 'பச்சை', transliteration: 'pachchai', meaning: 'Green', category: 'simple', audioSrc: 'audio/words/pachchai.mp3' },
+  { tamil: 'மஞ்சள்', transliteration: 'manjal', meaning: 'Yellow', category: 'simple', audioSrc: 'audio/words/manjal.mp3' },
+  { tamil: 'கருப்பு', transliteration: 'karuppu', meaning: 'Black', category: 'simple', audioSrc: 'audio/words/karuppu.mp3' },
+  { tamil: 'வெள்ளை', transliteration: 'vellai', meaning: 'White', category: 'simple', audioSrc: 'audio/words/vellai.mp3' },
+  { tamil: 'நீலம்', transliteration: 'neelam', meaning: 'Blue', category: 'simple', audioSrc: 'audio/words/neelam.mp3' },
 ];
 
 export const FRUITS_WORDS: WordInfo[] = [
-  { tamil: 'மாம்பழம்', transliteration: 'maampazham', meaning: 'Mango', category: 'simple', audioSrc: '/audio/words/maampazham.mp3' },
-  { tamil: 'வாழைப்பழம்', transliteration: 'vaazhaippazham', meaning: 'Banana', category: 'complex', audioSrc: '/audio/words/vaazhaippazham.mp3' },
-  { tamil: 'பலாப்பழம்', transliteration: 'palaappazham', meaning: 'Jackfruit', category: 'complex', audioSrc: '/audio/words/palaappazham.mp3' },
-  { tamil: 'திராட்சைப்பழம்', transliteration: 'thiraatchaippazham', meaning: 'Grapes', category: 'complex', audioSrc: '/audio/words/thiraatchai.mp3' },
-  { tamil: 'கொய்யாப்பழம்', transliteration: 'koiyaappazham', meaning: 'Guava', category: 'simple', audioSrc: '/audio/words/koiyaappazham.mp3' },
-  { tamil: 'ஆப்பிள்', transliteration: 'aappil', meaning: 'Apple', category: 'simple', audioSrc: '/audio/words/aappil.mp3' },
-  { tamil: 'அன்னாசிப்பழம்', transliteration: 'annaasippazham', meaning: 'Pineapple', category: 'complex', audioSrc: '/audio/words/annaasippazham.mp3'},
-  { tamil: 'தர்பூசணி', transliteration: 'tharpoosani', meaning: 'Watermelon', category: 'complex', audioSrc: '/audio/words/tharpoosani.mp3'},
+  { tamil: 'மாம்பழம்', transliteration: 'maampazham', meaning: 'Mango', category: 'simple', audioSrc: 'audio/words/maampazham.mp3' },
+  { tamil: 'வாழைப்பழம்', transliteration: 'vaazhaippazham', meaning: 'Banana', category: 'complex', audioSrc: 'audio/words/vaazhaippazham.mp3' },
+  { tamil: 'பலாப்பழம்', transliteration: 'palaappazham', meaning: 'Jackfruit', category: 'complex', audioSrc: 'audio/words/palaappazham.mp3' },
+  { tamil: 'திராட்சைப்பழம்', transliteration: 'thiraatchaippazham', meaning: 'Grapes', category: 'complex', audioSrc: 'audio/words/thiraatchai.mp3' },
+  { tamil: 'கொய்யாப்பழம்', transliteration: 'koiyaappazham', meaning: 'Guava', category: 'simple', audioSrc: 'audio/words/koiyaappazham.mp3' },
+  { tamil: 'ஆப்பிள்', transliteration: 'aappil', meaning: 'Apple', category: 'simple', audioSrc: 'audio/words/aappil.mp3' },
+  { tamil: 'அன்னாசிப்பழம்', transliteration: 'annaasippazham', meaning: 'Pineapple', category: 'complex', audioSrc: 'audio/words/annaasippazham.mp3'},
+  { tamil: 'தர்பூசணி', transliteration: 'tharpoosani', meaning: 'Watermelon', category: 'complex', audioSrc: 'audio/words/tharpoosani.mp3'},
 ];
 
 export const ANIMALS_WORDS: WordInfo[] = [
-  { tamil: 'நாய்', transliteration: 'naai', meaning: 'Dog', category: 'simple', audioSrc: '/audio/words/naai.mp3' },
-  { tamil: 'பூனை', transliteration: 'poonai', meaning: 'Cat', category: 'simple', audioSrc: '/audio/words/poonai.mp3' },
-  { tamil: 'யானை', transliteration: 'yaanai', meaning: 'Elephant', category: 'simple', audioSrc: '/audio/words/yaanai.mp3' },
-  { tamil: 'குதிரை', transliteration: 'kuthirai', meaning: 'Horse', category: 'simple', audioSrc: '/audio/words/kuthirai.mp3' },
-  { tamil: 'சிங்கம்', transliteration: 'singam', meaning: 'Lion', category: 'simple', audioSrc: '/audio/words/singam.mp3' },
-  { tamil: 'புலி', transliteration: 'puli', meaning: 'Tiger', category: 'simple', audioSrc: '/audio/words/puli.mp3'},
-  { tamil: 'மான்', transliteration: 'maan', meaning: 'Deer', category: 'simple', audioSrc: '/audio/words/maan.mp3'},
-  { tamil: 'பசு', transliteration: 'pasu', meaning: 'Cow', category: 'simple', audioSrc: '/audio/words/pasu.mp3'},
-  { tamil: 'ஆடு', transliteration: 'aadu', meaning: 'Goat', category: 'simple', audioSrc: '/audio/words/aadu.mp3'},
-  { tamil: 'கரடி', transliteration: 'karadi', meaning: 'Bear', category: 'simple', audioSrc: '/audio/words/karadi.mp3'},
+  { tamil: 'நாய்', transliteration: 'naai', meaning: 'Dog', category: 'simple', audioSrc: 'audio/words/naai.mp3' },
+  { tamil: 'பூனை', transliteration: 'poonai', meaning: 'Cat', category: 'simple', audioSrc: 'audio/words/poonai.mp3' },
+  { tamil: 'யானை', transliteration: 'yaanai', meaning: 'Elephant', category: 'simple', audioSrc: 'audio/words/yaanai.mp3' },
+  { tamil: 'குதிரை', transliteration: 'kuthirai', meaning: 'Horse', category: 'simple', audioSrc: 'audio/words/kuthirai.mp3' },
+  { tamil: 'சிங்கம்', transliteration: 'singam', meaning: 'Lion', category: 'simple', audioSrc: 'audio/words/singam.mp3' },
+  { tamil: 'புலி', transliteration: 'puli', meaning: 'Tiger', category: 'simple', audioSrc: 'audio/words/puli.mp3'},
+  { tamil: 'மான்', transliteration: 'maan', meaning: 'Deer', category: 'simple', audioSrc: 'audio/words/maan.mp3'},
+  { tamil: 'பசு', transliteration: 'pasu', meaning: 'Cow', category: 'simple', audioSrc: 'audio/words/pasu.mp3'},
+  { tamil: 'ஆடு', transliteration: 'aadu', meaning: 'Goat', category: 'simple', audioSrc: 'audio/words/aadu.mp3'},
+  { tamil: 'கரடி', transliteration: 'karadi', meaning: 'Bear', category: 'simple', audioSrc: 'audio/words/karadi.mp3'},
 ];
 
 export const BIRDS_WORDS: WordInfo[] = [
-    { tamil: 'மயில்', transliteration: 'mayil', meaning: 'Peacock', category: 'simple', audioSrc: '/audio/words/mayil.mp3'},
-    { tamil: 'கிளி', transliteration: 'kili', meaning: 'Parrot', category: 'simple', audioSrc: '/audio/words/kili.mp3'},
-    { tamil: 'காகம்', transliteration: 'kaagam', meaning: 'Crow', category: 'simple', audioSrc: '/audio/words/kaagam.mp3'},
-    { tamil: 'புறா', transliteration: 'puraa', meaning: 'Pigeon', category: 'simple', audioSrc: '/audio/words/puraa.mp3'},
-    { tamil: 'வாத்து', transliteration: 'vaaththu', meaning: 'Duck', category: 'simple', audioSrc: '/audio/words/vaaththu.mp3'},
-    { tamil: 'கோழி', transliteration: 'kozhi', meaning: 'Hen/Chicken', category: 'simple', audioSrc: '/audio/words/kozhi.mp3'},
+    { tamil: 'மயில்', transliteration: 'mayil', meaning: 'Peacock', category: 'simple', audioSrc: 'audio/words/mayil.mp3'},
+    { tamil: 'கிளி', transliteration: 'kili', meaning: 'Parrot', category: 'simple', audioSrc: 'audio/words/kili.mp3'},
+    { tamil: 'காகம்', transliteration: 'kaagam', meaning: 'Crow', category: 'simple', audioSrc: 'audio/words/kaagam.mp3'},
+    { tamil: 'புறா', transliteration: 'puraa', meaning: 'Pigeon', category: 'simple', audioSrc: 'audio/words/puraa.mp3'},
+    { tamil: 'வாத்து', transliteration: 'vaaththu', meaning: 'Duck', category: 'simple', audioSrc: 'audio/words/vaaththu.mp3'},
+    { tamil: 'கோழி', transliteration: 'kozhi', meaning: 'Hen/Chicken', category: 'simple', audioSrc: 'audio/words/kozhi.mp3'},
 ];
 
 
 export const NUMBERS_WORDS: WordInfo[] = [
-  { tamil: 'ஒன்று', transliteration: 'ondru', meaning: 'One (1)', category: 'simple', audioSrc: '/audio/words/ondru.mp3' },
-  { tamil: 'இரண்டு', transliteration: 'irandu', meaning: 'Two (2)', category: 'simple', audioSrc: '/audio/words/irandu.mp3' },
-  { tamil: 'மூன்று', transliteration: 'moondru', meaning: 'Three (3)', category: 'simple', audioSrc: '/audio/words/moondru.mp3' },
-  { tamil: 'நான்கு', transliteration: 'naangu', meaning: 'Four (4)', category: 'simple', audioSrc: '/audio/words/naangu.mp3' },
-  { tamil: 'ஐந்து', transliteration: 'aindhu', meaning: 'Five (5)', category: 'simple', audioSrc: '/audio/words/aindhu.mp3' },
-  { tamil: 'ஆறு', transliteration: 'aaru', meaning: 'Six (6)', category: 'simple', audioSrc: '/audio/words/aaru.mp3' },
-  { tamil: 'ஏழு', transliteration: 'ezhu', meaning: 'Seven (7)', category: 'simple', audioSrc: '/audio/words/ezhu.mp3' },
-  { tamil: 'எட்டு', transliteration: 'ettu', meaning: 'Eight (8)', category: 'simple', audioSrc: '/audio/words/ettu.mp3' },
-  { tamil: 'ஒன்பது', transliteration: 'onpathu', meaning: 'Nine (9)', category: 'simple', audioSrc: '/audio/words/onbathu.mp3' },
-  { tamil: 'பத்து', transliteration: 'paththu', meaning: 'Ten (10)', category: 'simple', audioSrc: '/audio/words/paththu.mp3' },
+  { tamil: 'ஒன்று', transliteration: 'ondru', meaning: 'One (1)', category: 'simple', audioSrc: 'audio/words/ondru.mp3' },
+  { tamil: 'இரண்டு', transliteration: 'irandu', meaning: 'Two (2)', category: 'simple', audioSrc: 'audio/words/irandu.mp3' },
+  { tamil: 'மூன்று', transliteration: 'moondru', meaning: 'Three (3)', category: 'simple', audioSrc: 'audio/words/moondru.mp3' },
+  { tamil: 'நான்கு', transliteration: 'naangu', meaning: 'Four (4)', category: 'simple', audioSrc: 'audio/words/naangu.mp3' },
+  { tamil: 'ஐந்து', transliteration: 'aindhu', meaning: 'Five (5)', category: 'simple', audioSrc: 'audio/words/aindhu.mp3' },
+  { tamil: 'ஆறு', transliteration: 'aaru', meaning: 'Six (6)', category: 'simple', audioSrc: 'audio/words/aaru.mp3' },
+  { tamil: 'ஏழு', transliteration: 'ezhu', meaning: 'Seven (7)', category: 'simple', audioSrc: 'audio/words/ezhu.mp3' },
+  { tamil: 'எட்டு', transliteration: 'ettu', meaning: 'Eight (8)', category: 'simple', audioSrc: 'audio/words/ettu.mp3' },
+  { tamil: 'ஒன்பது', transliteration: 'onpathu', meaning: 'Nine (9)', category: 'simple', audioSrc: 'audio/words/onbathu.mp3' },
+  { tamil: 'பத்து', transliteration: 'paththu', meaning: 'Ten (10)', category: 'simple', audioSrc: 'audio/words/paththu.mp3' },
 ];
 
 export const FAMILY_WORDS: WordInfo[] = [
-  { tamil: 'அம்மா', transliteration: 'ammaa', meaning: 'Mother', category: 'simple', audioSrc: '/audio/words/ammaa.mp3' },
-  { tamil: 'அப்பா', transliteration: 'appaa', meaning: 'Father', category: 'simple', audioSrc: '/audio/words/appaa.mp3' },
-  { tamil: 'தாத்தா', transliteration: 'thaaththaa', meaning: 'Grandfather', category: 'simple', audioSrc: '/audio/words/thaaththaa.mp3' },
-  { tamil: 'பாட்டி', transliteration: 'paatti', meaning: 'Grandmother', category: 'simple', audioSrc: '/audio/words/paatti.mp3' },
-  { tamil: 'அண்ணன்', transliteration: 'annan', meaning: 'Elder brother', category: 'simple', audioSrc: '/audio/words/annan.mp3' },
-  { tamil: 'தம்பி', transliteration: 'thambi', meaning: 'Younger brother', category: 'simple', audioSrc: '/audio/words/thambi.mp3' },
-  { tamil: 'அக்கா', transliteration: 'akkaa', meaning: 'Elder sister', category: 'simple', audioSrc: '/audio/words/akkaa.mp3' },
-  { tamil: 'தங்கை', transliteration: 'thangai', meaning: 'Younger sister', category: 'simple', audioSrc: '/audio/words/thangai.mp3' },
+  { tamil: 'அம்மா', transliteration: 'ammaa', meaning: 'Mother', category: 'simple', audioSrc: 'audio/words/ammaa.mp3' },
+  { tamil: 'அப்பா', transliteration: 'appaa', meaning: 'Father', category: 'simple', audioSrc: 'audio/words/appaa.mp3' },
+  { tamil: 'தாத்தா', transliteration: 'thaaththaa', meaning: 'Grandfather', category: 'simple', audioSrc: 'audio/words/thaaththaa.mp3' },
+  { tamil: 'பாட்டி', transliteration: 'paatti', meaning: 'Grandmother', category: 'simple', audioSrc: 'audio/words/paatti.mp3' },
+  { tamil: 'அண்ணன்', transliteration: 'annan', meaning: 'Elder brother', category: 'simple', audioSrc: 'audio/words/annan.mp3' },
+  { tamil: 'தம்பி', transliteration: 'thambi', meaning: 'Younger brother', category: 'simple', audioSrc: 'audio/words/thambi.mp3' },
+  { tamil: 'அக்கா', transliteration: 'akkaa', meaning: 'Elder sister', category: 'simple', audioSrc: 'audio/words/akkaa.mp3' },
+  { tamil: 'தங்கை', transliteration: 'thangai', meaning: 'Younger sister', category: 'simple', audioSrc: 'audio/words/thangai.mp3' },
 ];
 
 export const DAYS_WORDS: WordInfo[] = [
-  { tamil: 'ஞாயிறு', transliteration: 'Gnayiru', meaning: 'Sunday', category: 'simple', audioSrc: '/audio/words/gnayiru.mp3' },
-  { tamil: 'திங்கள்', transliteration: 'Thingal', meaning: 'Monday', category: 'simple', audioSrc: '/audio/words/thingal.mp3' },
-  { tamil: 'செவ்வாய்', transliteration: 'Sevvaai', meaning: 'Tuesday', category: 'simple', audioSrc: '/audio/words/sevvaai.mp3' },
-  { tamil: 'புதன்', transliteration: 'Puthan', meaning: 'Wednesday', category: 'simple', audioSrc: '/audio/words/puthan.mp3' },
-  { tamil: 'வியாழன்', transliteration: 'Viyaazhan', meaning: 'Thursday', category: 'simple', audioSrc: '/audio/words/viyaazhan.mp3' },
-  { tamil: 'வெள்ளி', transliteration: 'Velli', meaning: 'Friday', category: 'simple', audioSrc: '/audio/words/velli.mp3' },
-  { tamil: 'சனி', transliteration: 'Sani', meaning: 'Saturday', category: 'simple', audioSrc: '/audio/words/sani.mp3' },
+  { tamil: 'ஞாயிறு', transliteration: 'Gnayiru', meaning: 'Sunday', category: 'simple', audioSrc: 'audio/words/gnayiru.mp3' },
+  { tamil: 'திங்கள்', transliteration: 'Thingal', meaning: 'Monday', category: 'simple', audioSrc: 'audio/words/thingal.mp3' },
+  { tamil: 'செவ்வாய்', transliteration: 'Sevvaai', meaning: 'Tuesday', category: 'simple', audioSrc: 'audio/words/sevvaai.mp3' },
+  { tamil: 'புதன்', transliteration: 'Puthan', meaning: 'Wednesday', category: 'simple', audioSrc: 'audio/words/puthan.mp3' },
+  { tamil: 'வியாழன்', transliteration: 'Viyaazhan', meaning: 'Thursday', category: 'simple', audioSrc: 'audio/words/viyaazhan.mp3' },
+  { tamil: 'வெள்ளி', transliteration: 'Velli', meaning: 'Friday', category: 'simple', audioSrc: 'audio/words/velli.mp3' },
+  { tamil: 'சனி', transliteration: 'Sani', meaning: 'Saturday', category: 'simple', audioSrc: 'audio/words/sani.mp3' },
 ];
 
 export const IMAGE3_WORDS: WordInfo[] = [
-    { tamil: 'அணில்', transliteration: 'anil', meaning: 'Squirrel', category: 'simple', audioSrc: '/audio/words/anil.mp3' },
-    { tamil: 'ஆடு', transliteration: 'aadu', meaning: 'Goat', category: 'simple', audioSrc: '/audio/words/aadu.mp3' },
-    { tamil: 'இலை', transliteration: 'ilai', meaning: 'Leaf', category: 'simple', audioSrc: '/audio/words/ilai.mp3' },
-    { tamil: 'ஈட்டி', transliteration: 'eetti', meaning: 'Spear', category: 'simple', audioSrc: '/audio/words/eetti.mp3' },
-    { tamil: 'உலக்கை', transliteration: 'ulakkai', meaning: 'Pestle', category: 'simple', audioSrc: '/audio/words/ulakkai.mp3' },
-    { tamil: 'ஊஞ்சல்', transliteration: 'oonjal', meaning: 'Swing', category: 'simple', audioSrc: '/audio/words/oonjal.mp3' },
-    { tamil: 'எறும்பு', transliteration: 'erumbu', meaning: 'Ant', category: 'simple', audioSrc: '/audio/words/erumbu.mp3' },
-    { tamil: 'ஏணி', transliteration: 'aeni', meaning: 'Ladder', category: 'simple', audioSrc: '/audio/words/aeni.mp3' },
-    { tamil: 'ஐவர்', transliteration: 'aivar', meaning: 'Five persons', category: 'simple', audioSrc: '/audio/words/aivar.mp3' },
-    { tamil: 'ஒட்டகம்', transliteration: 'ottagam', meaning: 'Camel', category: 'simple', audioSrc: '/audio/words/ottagam.mp3' },
-    { tamil: 'ஓடம்', transliteration: 'oadam', meaning: 'Boat', category: 'simple', audioSrc: '/audio/words/oadam.mp3' },
-    { tamil: 'ஔடதம்', transliteration: 'audatham', meaning: 'Medicine', category: 'simple', audioSrc: '/audio/words/audatham.mp3' },
-    { tamil: 'பந்து', transliteration: 'pandhu', meaning: 'Ball', category: 'simple', audioSrc: '/audio/words/pandhu.mp3' },
-    { tamil: 'சங்கு', transliteration: 'sangu', meaning: 'Conch', category: 'simple', audioSrc: '/audio/words/sangu.mp3' },
-    { tamil: 'தச்சன்', transliteration: 'thachchan', meaning: 'Carpenter', category: 'simple', audioSrc: '/audio/words/thachchan.mp3' },
-    { tamil: 'மஞ்சள்', transliteration: 'manjal', meaning: 'Turmeric/Yellow', category: 'simple', audioSrc: '/audio/words/manjal.mp3' },
-    { tamil: 'வட்டம்', transliteration: 'vattam', meaning: 'Circle', category: 'simple', audioSrc: '/audio/words/vattam.mp3' },
-    { tamil: 'பணம்', transliteration: 'panam', meaning: 'Money', category: 'simple', audioSrc: '/audio/words/panam.mp3' },
-    { tamil: 'கப்பல்', transliteration: 'kappal', meaning: 'Ship', category: 'simple', audioSrc: '/audio/words/kappal.mp3' },
-    { tamil: 'செவ்வந்தி', transliteration: 'sevvanthi', meaning: 'Chrysanthemum', category: 'complex', audioSrc: '/audio/words/sevvanthi.mp3' },
-    { tamil: 'வாத்து', transliteration: 'vaaththu', meaning: 'Duck', category: 'simple', audioSrc: '/audio/words/vaaththu.mp3' },
-    { tamil: 'காக்கை', transliteration: 'kaakkai', meaning: 'Crow', category: 'simple', audioSrc: '/audio/words/kaakkai.mp3' },
+    { tamil: 'அணில்', transliteration: 'anil', meaning: 'Squirrel', category: 'simple', audioSrc: 'audio/words/anil.mp3' },
+    { tamil: 'ஆடு', transliteration: 'aadu', meaning: 'Goat', category: 'simple', audioSrc: 'audio/words/aadu.mp3' },
+    { tamil: 'இலை', transliteration: 'ilai', meaning: 'Leaf', category: 'simple', audioSrc: 'audio/words/ilai.mp3' },
+    { tamil: 'ஈட்டி', transliteration: 'eetti', meaning: 'Spear', category: 'simple', audioSrc: 'audio/words/eetti.mp3' },
+    { tamil: 'உலக்கை', transliteration: 'ulakkai', meaning: 'Pestle', category: 'simple', audioSrc: 'audio/words/ulakkai.mp3' },
+    { tamil: 'ஊஞ்சல்', transliteration: 'oonjal', meaning: 'Swing', category: 'simple', audioSrc: 'audio/words/oonjal.mp3' },
+    { tamil: 'எறும்பு', transliteration: 'erumbu', meaning: 'Ant', category: 'simple', audioSrc: 'audio/words/erumbu.mp3' },
+    { tamil: 'ஏணி', transliteration: 'aeni', meaning: 'Ladder', category: 'simple', audioSrc: 'audio/words/aeni.mp3' },
+    { tamil: 'ஐவர்', transliteration: 'aivar', meaning: 'Five persons', category: 'simple', audioSrc: 'audio/words/aivar.mp3' },
+    { tamil: 'ஒட்டகம்', transliteration: 'ottagam', meaning: 'Camel', category: 'simple', audioSrc: 'audio/words/ottagam.mp3' },
+    { tamil: 'ஓடம்', transliteration: 'oadam', meaning: 'Boat', category: 'simple', audioSrc: 'audio/words/oadam.mp3' },
+    { tamil: 'ஔடதம்', transliteration: 'audatham', meaning: 'Medicine', category: 'simple', audioSrc: 'audio/words/audatham.mp3' },
+    { tamil: 'பந்து', transliteration: 'pandhu', meaning: 'Ball', category: 'simple', audioSrc: 'audio/words/pandhu.mp3' },
+    { tamil: 'சங்கு', transliteration: 'sangu', meaning: 'Conch', category: 'simple', audioSrc: 'audio/words/sangu.mp3' },
+    { tamil: 'தச்சன்', transliteration: 'thachchan', meaning: 'Carpenter', category: 'simple', audioSrc: 'audio/words/thachchan.mp3' },
+    { tamil: 'மஞ்சள்', transliteration: 'manjal', meaning: 'Turmeric/Yellow', category: 'simple', audioSrc: 'audio/words/manjal.mp3' },
+    { tamil: 'வட்டம்', transliteration: 'vattam', meaning: 'Circle', category: 'simple', audioSrc: 'audio/words/vattam.mp3' },
+    { tamil: 'பணம்', transliteration: 'panam', meaning: 'Money', category: 'simple', audioSrc: 'audio/words/panam.mp3' },
+    { tamil: 'கப்பல்', transliteration: 'kappal', meaning: 'Ship', category: 'simple', audioSrc: 'audio/words/kappal.mp3' },
+    { tamil: 'செவ்வந்தி', transliteration: 'sevvanthi', meaning: 'Chrysanthemum', category: 'complex', audioSrc: 'audio/words/sevvanthi.mp3' },
+    { tamil: 'வாத்து', transliteration: 'vaaththu', meaning: 'Duck', category: 'simple', audioSrc: 'audio/words/vaaththu.mp3' },
+    { tamil: 'காக்கை', transliteration: 'kaakkai', meaning: 'Crow', category: 'simple', audioSrc: 'audio/words/kaakkai.mp3' },
 ];
 
 const ALL_IMAGE_WORDS = [
@@ -261,7 +261,7 @@ let quizQuestions: QuizQuestion[] = [
   {
     id: 'q1a1', chapterId: 'ch1', type: QuestionType.MCQ, tamilWord: 'அ', source: 'uploaded_image' as 'uploaded_image',
     questionText: "What is the transliteration of 'அ'?", options: generateMCQOptions("a", ["aa", "i", "u"], "q1a1_a"),
-    correctAnswer: 'q1a1_a_opt_correct', audioSrc: '/audio/alphabets/a.mp3'
+    correctAnswer: 'q1a1_a_opt_correct', audioSrc: 'audio/alphabets/a.mp3'
   },
   {
     id: 'q1concept1', chapterId: 'ch1', type: QuestionType.MCQ, source: 'uploaded_image' as 'uploaded_image',
@@ -282,33 +282,33 @@ let quizQuestions: QuizQuestion[] = [
   {
     id: 'q2w1', chapterId: 'ch2', type: QuestionType.MCQ, tamilWord: 'அம்மா', source: 'uploaded_image' as 'uploaded_image',
     questionText: "Meaning of 'அம்மா'?", options: generateMCQOptions("Mother", ["Father", "Sister", "Brother"], "q2w1_amma"),
-    correctAnswer: 'q2w1_amma_opt_correct', audioSrc: '/audio/words/ammaa.mp3'
+    correctAnswer: 'q2w1_amma_opt_correct', audioSrc: 'audio/words/ammaa.mp3'
   },
   {
     id: 'q2color1', chapterId: 'ch2', type: QuestionType.MCQ, source: 'uploaded_image' as 'uploaded_image',
     questionText: "Tamil word for 'Red'?", options: generateMCQOptions("சிவப்பு", ["பச்சை", "மஞ்சள்", "நீலம்"], "q2c1_red"),
-    correctAnswer: 'q2c1_red_opt_correct', audioSrc: '/audio/words/sivappu.mp3'
+    correctAnswer: 'q2c1_red_opt_correct', audioSrc: 'audio/words/sivappu.mp3'
   },
   {
     id: 'q2number1', chapterId: 'ch2', type: QuestionType.FILL_IN_BLANK, source: 'uploaded_image' as 'uploaded_image',
     questionText: "Number '5' in Tamil is ____.", blankSegments: ["Number '5' in Tamil is ", "."] as [string, string],
-    correctAnswer: 'ஐந்து', answerFormat: 'draw-tamil', audioSrc: '/audio/words/aindhu.mp3'
+    correctAnswer: 'ஐந்து', answerFormat: 'draw-tamil', audioSrc: 'audio/words/aindhu.mp3'
   },
   {
     id: 'q2animal_mcq_dog', chapterId: 'ch2', type: QuestionType.MCQ, source: 'uploaded_image' as 'uploaded_image',
     questionText: `Which animal is 'நாய்'?`, options: generateMCQOptions("Dog", ["Cat", "Lion", "Horse"], "q2animal_dog"),
-    correctAnswer: `q2animal_dog_opt_correct`, audioSrc: '/audio/words/naai.mp3'
+    correctAnswer: `q2animal_dog_opt_correct`, audioSrc: 'audio/words/naai.mp3'
   },
   // Chapter 3: Complex Words Quiz
   {
     id: 'q3cw1', chapterId: 'ch3', type: QuestionType.MCQ, tamilWord: 'வாழைப்பழம்', source: 'uploaded_image' as 'uploaded_image',
     questionText: "Meaning of 'வாழைப்பழம்'?", options: generateMCQOptions("Banana", ["Mango", "Guava", "Apple"], "q3cw1_banana"),
-    correctAnswer: 'q3cw1_banana_opt_correct', audioSrc: '/audio/words/vaazhaippazham.mp3'
+    correctAnswer: 'q3cw1_banana_opt_correct', audioSrc: 'audio/words/vaazhaippazham.mp3'
   },
    {
     id: 'q3cw2', chapterId: 'ch3', type: QuestionType.FILL_IN_BLANK, source: 'general' as 'general',
     questionText: "'Thank you' in Tamil is ____.", blankSegments: ["'Thank you' in Tamil is ", "."] as [string, string],
-    correctAnswer: 'நன்றி', answerFormat: 'draw-tamil', audioSrc: '/audio/words/nandri.mp3'
+    correctAnswer: 'நன்றி', answerFormat: 'draw-tamil', audioSrc: 'audio/words/nandri.mp3'
   },
   // Chapter 4: Simple Sentences Quiz
   {
