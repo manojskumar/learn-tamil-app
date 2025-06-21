@@ -2,6 +2,7 @@ const CACHE_NAME = 'tamil-learning-adventure-v1';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/index.css', // Added index.css
   '/index.tsx', // This will be the bundled JS file in a real build
   '/manifest.json', // Assuming you might add a manifest later
   '/metadata.json',
