@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tamil Learning Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-bg': '#FFFDE7',      // Very Light Creamy Yellow (Page background)
+            'brand-surface': '#FFFFFF', // White (Card backgrounds)
+            'brand-primary': '#4FC3F7',  // Brighter Light Blue (Primary actions, headers)
+            'brand-primary-dark': '#039BE5', // Darker Light Blue (Hover for primary)
+            'brand-secondary': '#FFD54F', // Sunny Yellow (Accents, selected states)
+            'brand-secondary-dark': '#FFB300', // Darker Amber
+            'brand-accent': '#FF8A65',   // Light Deep Orange (Buttons, highlights)
+            'brand-accent-dark': '#FF7043',  // Darker Orange
+            'brand-success': '#4CAF50', // Green (Correct answers text)
+            'brand-success-light': '#E8F5E9', // Light Green (Background for correct)
+            'brand-error': '#F44336',   // Red (Incorrect answers text)
+            'brand-error-light': '#FFEBEE',   // Light Red (Background for incorrect)
+            'brand-text-primary': '#374151', // Dark Gray (Main text - like gray-700)
+            'brand-text-secondary': '#6B7280', // Medium Gray (Subtitles - like gray-500)
+            'brand-purple': '#BA68C8', // Friendly Purple
+            'brand-purple-light': '#F3E5F5', // Light Purple
+            'brand-teal': '#4DB6AC', // Friendly Teal
+            'brand-teal-light': '#E0F2F1', // Light Teal
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            tamil: ['"Noto Sans Tamil"', 'sans-serif'],
+          },
+          borderRadius: {
+            'xl': '1rem', // 16px
+            '2xl': '1.25rem', // 20px
+            '3xl': '1.75rem', // 28px
+          },
+          boxShadow: {
+            'card': '0 4px 12px 0 rgba(0, 0, 0, 0.07)',
+            'card-hover': '0 8px 16px 0 rgba(0, 0, 0, 0.1)',
+          }
+        },
+      },
+    }; // Added semicolon here
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react": "https://esm.sh/react@18.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-brand-bg font-sans text-brand-text-primary text-base">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
