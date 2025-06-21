@@ -1,20 +1,20 @@
 const CACHE_NAME = 'tamil-learning-adventure-v1';
 const ASSETS_TO_CACHE = [
-  'index.html', // Changed from '/'
-  'index.css',
-  'index.tsx', 
-  // 'manifest.json', // Only if it exists at the root relative to sw.js
-  'metadata.json',
+  './index.html',
+  './index.css',
+  './index.tsx', 
+  // './manifest.json', // Only if it exists at the root relative to sw.js
+  './metadata.json',
   // Key static assets from constants (alphabets and some words for demo)
   // These paths are relative to sw.js location
-  'audio/alphabets/a.mp3',
-  'audio/alphabets/aa.mp3',
-  'audio/alphabets/i.mp3',
-  'audio/alphabets/ik.mp3',
-  'audio/words/ammaa.mp3',
-  'audio/words/sivappu.mp3',
-  'audio/words/naai.mp3',
-  'audio/words/maampazham.mp3',
+  './audio/alphabets/a.mp3',
+  './audio/alphabets/aa.mp3',
+  './audio/alphabets/i.mp3',
+  './audio/alphabets/ik.mp3',
+  './audio/words/ammaa.mp3',
+  './audio/words/sivappu.mp3',
+  './audio/words/naai.mp3',
+  './audio/words/maampazham.mp3',
   // Add other critical assets like icons if they are local
   // CDN assets are typically not cached by your own SW unless specifically handled with opaque responses.
   // For full offline, it's better to host fonts and Tailwind (or its output CSS) locally.
@@ -34,8 +34,8 @@ self.addEventListener('install', (event) => {
       .then((cache) => {
         console.log('Opened cache and caching assets');
         // Add main assets (non-esm.sh local files)
-        const localAssets = ASSETS_TO_CACHE.filter(url => !url.startsWith('https://') || url.startsWith('https://esm.sh/'));
-        const coreAssetsPromise = cache.addAll(localAssets);
+        const localAssets = ASSETS_TO_CACHE.filter(url => url.startsWith('./') || url.startsWith('https://esm.sh/'));
+        const coreAssetsPromise = cache.addAll(localAssets.map(url => new Request(url, { cache: 'reload' }))); // Force reload for local assets
 
         // For external CDN assets (not esm.sh as it's handled differently in fetch), try to cache them but don't let failure block SW install
         const cdnAssetsPromises = ASSETS_TO_CACHE.filter(url => url.startsWith('https://') && !url.startsWith('https://esm.sh/')).map(url => {
@@ -115,6 +115,7 @@ self.addEventListener('fetch', (event) => {
           }
         ).catch(error => {
           console.error('Fetch failed; returning offline fallback or error for:', event.request.url, error);
+          // Optionally, return a generic offline page or asset here
         });
       })
   );
