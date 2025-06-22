@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Link to index.css at the root of dist -->
-  <link rel="stylesheet" href="./index.css"> 
+  <!-- Changed path to be relative --> 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -52,12 +51,23 @@
       },
     };
   </script>
-  <!-- Vite will inject link to bundled CSS here, e.g., <link rel="stylesheet" href="/learn-tamil-app/assets/index-XXXXXXXX.css"> -->
-  <link rel="stylesheet" href="./assets/index-placeholder.css"> <!-- Placeholder -->
+  <!-- Vite handles React imports and other dependencies; importmap is removed. -->
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "vite": "https://esm.sh/vite@^6.3.5",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.5.2"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/learn-tamil-app/assets/index-DvKrsbNN.js"></script>
+  <link rel="stylesheet" crossorigin href="/learn-tamil-app/assets/index-DqZ_Deei.css">
 </head>
 <body class="bg-brand-bg font-sans text-brand-text-primary text-base">
   <div id="root"></div>
-  <!-- Vite will inject script tag for bundled JS here, e.g., <script type="module" src="/learn-tamil-app/assets/index-YYYYYYYY.js"></script> -->
-  <script type="module" src="./assets/index-placeholder.js"></script> <!-- Placeholder -->
 </body>
 </html>

@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/learn-tamil-app/', // IMPORTANT: Set this to your GitHub repository name
   build: {
-    outDir: 'dist',
+    outDir: 'docs', // Output to 'docs' folder
   }
 })
