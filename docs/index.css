@@ -1,0 +1,16 @@
+/*
+  This file can be used for any global styles or CSS resets if needed.
+  For the Tamil Learning Adventure app, TailwindCSS handles the primary styling via CDN and inline configuration.
+  This file is copied to the 'dist' folder by Vite.
+*/
+
+body {
+  margin: 0;
+  /* Tailwind's preflight typically handles base font styling.
+     This is a fallback or can be extended. */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -40,6 +40,7 @@ An interactive web application designed to help secondary school children learn 
     ```
 
 2.  **Install dependencies:**
+    This command installs all the necessary libraries defined in `package.json`.
     ```bash
     npm install
     # or
@@ -70,9 +71,9 @@ An interactive web application designed to help secondary school children learn 
 
 ```
 .
-├── public/                     # Static assets (copied to dist root)
+├── public/                     # Static assets (copied to docs root by Vite)
 │   ├── audio/                  # Audio files
-│   ├── index.css               # Global CSS (if not bundled through JS)
+│   ├── index.css               # Global CSS (linked from root index.html, copied by Vite)
 │   ├── metadata.json
 │   └── sw.js                   # Service Worker script
 ├── src/                        # Application source code
@@ -83,17 +84,17 @@ An interactive web application designed to help secondary school children learn 
 │   ├── index.tsx               # React entry point
 │   └── types.ts                # TypeScript types
 ├── .gitignore
-├── index.html                  # Main HTML template (Vite entry)
+├── index.html                  # Main HTML template (Vite entry point)
 ├── package.json
 ├── README.md
-├── tsconfig.json               # (Vite will use a default or you can add one)
+├── tsconfig.json               # TypeScript configuration
 └── vite.config.ts              # Vite configuration
 ```
 
 ## 📚 Content Management
 
 All learning content (alphabets, words, sentences, etc.) is primarily managed in `src/constants.ts`. Audio files are in `public/audio/`.
-Paths to audio files in `constants.ts` (e.g., `audioSrc: 'audio/alphabets/a.mp3'`) are relative to the `public` directory, which Vite serves as the root.
+Paths to audio files in `constants.ts` (e.g., `audioSrc: 'audio/alphabets/a.mp3'`) are relative to the `public` directory. Vite correctly handles these paths during the build process.
 
 ## ⚙️ Building for Production
 
@@ -103,35 +104,65 @@ Paths to audio files in `constants.ts` (e.g., `audioSrc: 'audio/alphabets/a.mp3'
     # or
     # yarn build
     ```
-    This command will use Vite to compile and bundle your application into the `dist/` directory. The `base` path in `vite.config.ts` is set to `/learn-tamil-app/` to ensure assets are loaded correctly when deployed to a subdirectory on GitHub Pages.
+    This command will use Vite to compile and bundle your application. With the updated `vite.config.ts`, the output will be placed in the `docs/` directory. The `base` path in `vite.config.ts` is set to `/learn-tamil-app/` to ensure assets are loaded correctly when deployed to a subdirectory on GitHub Pages.
 
 ## 🌍 Deployment with GitHub Pages
 
-1.  **Ensure your repository is on GitHub.**
-2.  **Build your project:** Run `npm run build`. This creates the `dist/` folder.
-3.  **Deploy the `dist/` folder:**
-    *   **Option A (Manual):**
-        1.  Commit the contents of the `dist/` folder to your `gh-pages` branch (or `main` branch if deploying from there). You might need to force push if rewriting history or use a tool like `gh-pages` npm package.
-    *   **Option B (Using `gh-pages` package - Recommended for simplicity):**
-        1.  Install `gh-pages`: `npm install gh-pages --save-dev`
-        2.  Add a deploy script to your `package.json`:
-            ```json
-            "scripts": {
-              // ... other scripts
-              "deploy": "vite build && gh-pages -d dist"
-            }
-            ```
-        3.  Run `npm run deploy`. This will build the project and push the `dist` folder contents to the `gh-pages` branch.
-    *   **Option C (GitHub Actions):** Set up a GitHub Action to automatically build and deploy on pushes to your main branch.
+You have two main methods:
+
+**Method 1: Deploying the `docs` folder (Recommended for your current setup)**
+
+1.  **Build your project:**
+    ```bash
+    npm run build
+    ```
+    This creates/updates the `docs/` folder with your production-ready application.
+2.  **Commit and push:** Add the `docs/` folder (and any other changes) to your Git history and push to your GitHub repository's main branch.
+    ```bash
+    git add .
+    git commit -m "Build application and update docs folder"
+    git push origin main 
+    ```
+3.  **Configure GitHub Pages settings:**
+    *   Go to your repository settings on GitHub -> Pages.
+    *   Under "Build and deployment", for "Source", select **"Deploy from a branch"**.
+    *   Under "Branch", select your `main` branch (or `master`, or whichever branch you are working on) and the **`/docs`** folder.
+    *   Click "Save".
+    *   Your site will be available at `https://<username>.github.io/learn-tamil-app/`. The `base: '/learn-tamil-app/'` in `vite.config.ts` ensures all assets are loaded correctly from this subpath.
+
+**Method 2: Using the `gh-pages` branch (Alternative)**
+
+This method uses a separate branch (commonly `gh-pages`) to host your built site.
+
+1.  **Install `gh-pages` (if not already):**
+    ```bash
+    npm install gh-pages --save-dev
+    ```
+2.  **Add a `deploy` script to your `package.json`:**
+    (Ensure your `vite.config.ts` `build.outDir` is `'dist'` for this method, or adjust the script)
+    ```json
+    "scripts": {
+      // ... other scripts
+      "predeploy": "npm run build", // Builds to 'dist' if outDir is 'dist'
+      "deploy": "gh-pages -d dist"  // Pushes 'dist' contents to 'gh-pages' branch
+    }
+    ```
+    *If you kept `outDir: 'docs'` in `vite.config.ts`, the script would be ` "deploy": "gh-pages -d docs" `.*
+3.  **Run the deploy script:**
+    ```bash
+    npm run deploy
+    ```
+    This will build the project and then push the contents of the output folder (`dist` or `docs` as per your config and script) to the `gh-pages` branch.
 4.  **Configure GitHub Pages settings:**
     *   Go to your repository settings on GitHub -> Pages.
-    *   Set the source to deploy from the `gh-pages` branch (and `/ (root)` folder).
-    *   Your site will be available at `https://<username>.github.io/learn-tamil-app/`. The `base: '/learn-tamil-app/'` in `vite.config.ts` ensures all assets are loaded correctly from this subpath.
+    *   Under "Build and deployment", for "Source", select **"Deploy from a branch"**.
+    *   Under "Branch", select the `gh-pages` branch and the **`/ (root)`** folder.
+    *   Click "Save".
 
 ## 🌐 Offline Capabilities
 
 The application includes a Service Worker (`public/sw.js`) for basic offline caching.
-*   The `sw.js` provided caches known static assets from the `public` folder and the main `index.html` and `index.css`.
+*   The `sw.js` provided caches known static assets from the `public` folder and the main `index.html` and `index.css` (which are copied to the root of your `docs` or `dist` folder).
 *   **Important:** It does **not** automatically cache the JavaScript and CSS files generated by Vite (which have hashed filenames, e.g., `assets/index-a1b2c3d4.js`). For a robust Progressive Web App (PWA) experience where these generated assets are also cached, consider using a Vite PWA plugin like `vite-plugin-pwa`. This plugin can auto-generate a service worker that includes all necessary assets.
 
 ## 🤝 Contributing
